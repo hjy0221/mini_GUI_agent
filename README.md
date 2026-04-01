@@ -1,12 +1,12 @@
 # ✦ Mini-GUI-Agent: AI Engineering Dashboard
 
-현대적이고 미려한 디자인의 대시보드를 통해 **Claude 3.5 Sonnet**과 **Google Gemini 1.5 Pro** 기반의 AI 에이전트 루프를 관리하고 모니터링할 수 있는 프로젝트입니다.
+현대적이고 미려한 디자인의 대시보드를 통해 **Claude**와 **Google Gemini**기반의 AI 에이전트 루프를 관리하고 모니터링할 수 있는 프로젝트입니다.
 
 ![Dashboard Preview](./public/dashboard.png)
 
 ## 🚀 주요 특징
 
-- **Dual-Model Support**: Anthropic Claude 3.5 Sonnet과 Google Gemini 1.5 Pro/Flash를 모두 지원합니다. 버튼 하나로 에이전트 엔진을 전환할 수 있습니다.
+- **Dual-Model Support**: Anthropic Claude와 Google Gemini를 모두 지원합니다. 버튼 하나로 에이전트 엔진을 전환할 수 있습니다.
 - **Agent Intelligence**: 주어진 작업을 수행하기 위해 디렉토리 분석, 파일 읽기/쓰기, 명령어 실행 등 다양한 도구(Function Calling)를 사용합니다.
 - **Modern Dashboard UI**: 사고 과정(Thought), 도구 실행(Tool Use), 결과(Result)를 실시간으로 시각화하여 에이전트의 워크플로우를 한눈에 파악할 수 있습니다.
 - **Mock Mode 지원**: API 키 없이도 에이전트의 동작 방식을 테스트할 수 있는 시나리오 기반 시뮬레이션 모드를 제공합니다.
@@ -58,6 +58,3 @@ npm run dev
 - `src/tools/`: 개별 도구 구현체
 - `lib/`: 서버 사이드 에이전트 러너
 
-## 📝 라이선스
-
-이 프로젝트는 MIT 라이선스를 따릅니다.
