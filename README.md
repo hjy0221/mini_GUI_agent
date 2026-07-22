@@ -1,5 +1,7 @@
 # ✦ Mini-GUI-Agent: AI Engineering Dashboard
 
+[한국어](#-mini-gui-agent-ai-engineering-dashboard) · [English](#english)
+
 현대적이고 미려한 디자인의 대시보드를 통해 **Claude**와 **Google Gemini**기반의 AI 에이전트 루프를 관리하고 모니터링할 수 있는 프로젝트입니다.
 
 ![Dashboard Preview](./public/dashboard.png)
@@ -58,3 +60,35 @@ npm run dev
 - `src/tools/`: 개별 도구 구현체
 - `lib/`: 서버 사이드 에이전트 러너
 
+---
+
+## English
+
+Mini-GUI-Agent is an AI engineering dashboard for running and monitoring agent loops powered by Anthropic Claude or Google Gemini.
+
+![Dashboard Preview](./public/dashboard.png)
+
+### Highlights
+
+- Switchable Claude and Gemini engines
+- Agent tools for directory inspection, file editing, command execution, code search, and glob matching
+- Live visualization of reasoning, tool calls, results, progress, and logs
+- Mock mode for trying the workflow without API keys
+
+### Getting started
+
+Create `.env.local`:
+
+```env
+ANTHROPIC_API_KEY=your_anthropic_key
+GEMINI_API_KEY=your_gemini_key
+```
+
+Then run:
+
+```bash
+npm install
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000).
