@@ -92,3 +92,10 @@ npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000).
+
+
+### Technology and project structure
+
+The frontend and backend use Next.js App Router, React, and TypeScript, with vanilla CSS. The AI SDKs are `@anthropic-ai/sdk` and `@google/generative-ai`; tool schemas use Zod and Zod-to-JSON-Schema.
+
+The available tools are `list_dir`, `read_file`, `write_file`, `edit_file` (including linter-based correction), `run_command`, `search_code`, and `glob`. The `app/` directory contains dashboard pages and layouts; `src/agent/` contains the agent loop and Claude, Gemini, and mock wrappers; `src/executor/` handles tool execution and schema conversion; `src/tools/` implements individual tools; and `lib/` contains the server-side agent runner.
