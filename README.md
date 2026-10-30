@@ -1,6 +1,78 @@
 # ✦ Mini-GUI-Agent: AI Engineering Dashboard
 
-[한국어](#-mini-gui-agent-ai-engineering-dashboard) · [English](#english)
+[日本語](https://github.com/hjy0221/mini_GUI_agent#%E6%97%A5%E6%9C%AC%E8%AA%9E) · [English](https://github.com/hjy0221/mini_GUI_agent#english) · [한국어](https://github.com/hjy0221/mini_GUI_agent#%ED%95%9C%EA%B5%AD%EC%96%B4)
+
+## 日本語
+
+Mini-GUI-Agent は Anthropic Claude または Google Gemini によるエージェントループを実行・監視するダッシュボードです。
+
+![Dashboard Preview](./public/dashboard.png)
+
+### 機能
+
+- Claude と Gemini の切り替え、API キー不要のモックモード
+- ディレクトリ確認、ファイル操作、コマンド実行、検索
+- 思考、ツール呼び出し、結果、進捗、ログの可視化
+
+### 開始方法
+
+`.env.local` にキーを設定します。
+
+```env
+ANTHROPIC_API_KEY=your_anthropic_key
+GEMINI_API_KEY=your_gemini_key
+```
+
+```bash
+npm install
+npm run dev
+```
+
+[http://localhost:3000](http://localhost:3000) を開きます。
+
+### 技術と構成
+
+Next.js App Router、React、TypeScript、CSS、Anthropic と Google の SDK、Zod を使用します。`app/` は画面、`src/agent/` はエージェントループ、`src/executor/` はツール実行とスキーマ変換、`src/tools/` はツール実装、`lib/` はサーバー側ランナーです。ツールには `list_dir`、`read_file`、`write_file`、`edit_file`、`run_command`、`search_code`、`glob` があります。
+
+## English
+
+Mini-GUI-Agent is an AI engineering dashboard for running and monitoring agent loops powered by Anthropic Claude or Google Gemini.
+
+![Dashboard Preview](./public/dashboard.png)
+
+### Highlights
+
+- Switchable Claude and Gemini engines
+- Agent tools for directory inspection, file editing, command execution, code search, and glob matching
+- Live visualization of reasoning, tool calls, results, progress, and logs
+- Mock mode for trying the workflow without API keys
+
+### Getting started
+
+Create `.env.local`:
+
+```env
+ANTHROPIC_API_KEY=your_anthropic_key
+GEMINI_API_KEY=your_gemini_key
+```
+
+Then run:
+
+```bash
+npm install
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000).
+
+
+### Technology and project structure
+
+The frontend and backend use Next.js App Router, React, and TypeScript, with vanilla CSS. The AI SDKs are `@anthropic-ai/sdk` and `@google/generative-ai`; tool schemas use Zod and Zod-to-JSON-Schema.
+
+The available tools are `list_dir`, `read_file`, `write_file`, `edit_file` (including linter-based correction), `run_command`, `search_code`, and `glob`. The `app/` directory contains dashboard pages and layouts; `src/agent/` contains the agent loop and Claude, Gemini, and mock wrappers; `src/executor/` handles tool execution and schema conversion; `src/tools/` implements individual tools; and `lib/` contains the server-side agent runner.
+
+## 한국어
 
 현대적이고 미려한 디자인의 대시보드를 통해 **Claude**와 **Google Gemini**기반의 AI 에이전트 루프를 관리하고 모니터링할 수 있는 프로젝트입니다.
 
@@ -59,43 +131,3 @@ npm run dev
 - `src/executor/`: 도구 실행 및 스키마 변환 (ToolExecutor)
 - `src/tools/`: 개별 도구 구현체
 - `lib/`: 서버 사이드 에이전트 러너
-
----
-
-## English
-
-Mini-GUI-Agent is an AI engineering dashboard for running and monitoring agent loops powered by Anthropic Claude or Google Gemini.
-
-![Dashboard Preview](./public/dashboard.png)
-
-### Highlights
-
-- Switchable Claude and Gemini engines
-- Agent tools for directory inspection, file editing, command execution, code search, and glob matching
-- Live visualization of reasoning, tool calls, results, progress, and logs
-- Mock mode for trying the workflow without API keys
-
-### Getting started
-
-Create `.env.local`:
-
-```env
-ANTHROPIC_API_KEY=your_anthropic_key
-GEMINI_API_KEY=your_gemini_key
-```
-
-Then run:
-
-```bash
-npm install
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000).
-
-
-### Technology and project structure
-
-The frontend and backend use Next.js App Router, React, and TypeScript, with vanilla CSS. The AI SDKs are `@anthropic-ai/sdk` and `@google/generative-ai`; tool schemas use Zod and Zod-to-JSON-Schema.
-
-The available tools are `list_dir`, `read_file`, `write_file`, `edit_file` (including linter-based correction), `run_command`, `search_code`, and `glob`. The `app/` directory contains dashboard pages and layouts; `src/agent/` contains the agent loop and Claude, Gemini, and mock wrappers; `src/executor/` handles tool execution and schema conversion; `src/tools/` implements individual tools; and `lib/` contains the server-side agent runner.
