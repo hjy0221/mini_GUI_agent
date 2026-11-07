@@ -4,73 +4,123 @@
 
 ## 日本語
 
-Mini-GUI-Agent は Anthropic Claude または Google Gemini によるエージェントループを実行・監視するダッシュボードです。
+モダンで美しくデザインされたダッシュボードを使用して、**Claude**と**Google Gemini**ベースのAIエージェントループを管理および監視できるプロジェクトです。
 
 ![Dashboard Preview](./public/dashboard.png)
 
-### 機能
+## 🚀主な特長
 
-- Claude と Gemini の切り替え、API キー不要のモックモード
-- ディレクトリ確認、ファイル操作、コマンド実行、検索
-- 思考、ツール呼び出し、結果、進捗、ログの可視化
+- **Dual-Model Support**: Anthropic Claude と Google Gemini の両方をサポートします。ボタン1つでエージェントエンジンを切り替えることができます。
+- **Agent Intelligence**：特定のタスクを実行するために、ディレクトリ分析、ファイルの読み取り/書き込み、命令の実行など、さまざまなツール（Function Calling）を使用します。
+- **Modern Dashboard UI**: 思考過程(Thought)、ツール実行(Tool Use)、結果(Result)をリアルタイムで視覚化し、エージェントのワークフローを一目で把握できます。
+- **Mock Mode サポート**: API キーなしでエージェントの動作をテストできるシナリオベースのシミュレーションモードを提供します。
+- **Metrics & Logging**: ツール使用回数、状態進行度、詳細実行ログをリアルタイムで確認可能です。
 
-### 開始方法
+## 🛠️ 技術スタック
 
-`.env.local` にキーを設定します。
+- **Frontend/Backend**: Next.js (App Router), React, TypeScript
+- **Styling**: Vanilla CSS (Modern Aesthetics)
+- **AI SDK**: @anthropic-ai/sdk, @google/generative-ai
+- **Tools**: Zod、Zod-to-JSON-Schema
 
-```env
+## 🔧 ツールバー (Agent Tools)
+
+エージェントは、次のツールを組み合わせて複雑なエンジニアリングタスクを実行します。
+- `list_dir`: ディレクトリ構造の確認
+- `read_file` / `write_file`: ファイル内容の読み書き
+- `edit_file`：ファイルの特定部分の修正（Linterベースの補正を含む）
+- `run_command`: 端子命令実行
+- `search_code`: コードベース内検索
+- `glob`：パターンベースのファイルナビゲーション
+
+## 🏁 はじめに
+
+### 1. 環境変数の設定
+`.env.local`ファイル（またはシステムホスト環境）に次のAPIキーを設定してください。
+
+```bash
 ANTHROPIC_API_KEY=your_anthropic_key
 GEMINI_API_KEY=your_gemini_key
 ```
 
+### 2. パッケージのインストール
 ```bash
 npm install
-npm run dev
 ```
 
-[http://localhost:3000](http://localhost:3000) を開きます。
+### 3. 開発サーバーの実行
+```bash
+npm run dev
+```
+その後、`http://localhost:3000`に接続してダッシュボードを確認してください。
 
-### 技術と構成
+## 📁 プロジェクト構造
 
-Next.js App Router、React、TypeScript、CSS、Anthropic と Google の SDK、Zod を使用します。`app/` は画面、`src/agent/` はエージェントループ、`src/executor/` はツール実行とスキーマ変換、`src/tools/` はツール実装、`lib/` はサーバー側ランナーです。ツールには `list_dir`、`read_file`、`write_file`、`edit_file`、`run_command`、`search_code`、`glob` があります。
+- `app/`: Next.js ページとレイアウト (Dashboard UI)
+- `src/agent/`：エージェントループとモデル別ラッパー（Claude、Gemini、Mock）
+- `src/executor/`: ツールの実行とスキーマ変換 (ToolExecutor)
+- `src/tools/`：個々のツール実装
+- `lib/`: サーバーサイドエージェントランナー
 
 ## English
 
-Mini-GUI-Agent is an AI engineering dashboard for running and monitoring agent loops powered by Anthropic Claude or Google Gemini.
+This is a project that allows you to manage and monitor AI agent loops based on **Claude** and **Google Gemini** through a modern and elegantly designed dashboard.
 
 ![Dashboard Preview](./public/dashboard.png)
 
-### Highlights
+## 🚀 Key Features
 
-- Switchable Claude and Gemini engines
-- Agent tools for directory inspection, file editing, command execution, code search, and glob matching
-- Live visualization of reasoning, tool calls, results, progress, and logs
-- Mock mode for trying the workflow without API keys
+- **Dual-Model Support**: Supports both Anthropic Claude and Google Gemini. You can switch agent engines with one button.
+- **Agent Intelligence**: Uses various tools (Function Calling) such as directory analysis, file reading/writing, and command execution to perform a given task.
+- **Modern Dashboard UI**: You can understand the agent's workflow at a glance by visualizing thought process (Thought), tool execution (Tool Use), and result (Result) in real time.
+- **Mock Mode Support**: Provides a scenario-based simulation mode that allows you to test how the agent behaves without an API key.
+- **Metrics & Logging**: You can check the number of tool uses, status progress, and detailed execution logs in real time.
 
-### Getting started
+## 🛠️ Technology Stack
 
-Create `.env.local`:
+- **Frontend/Backend**: Next.js (App Router), React, TypeScript
+- **Styling**: Vanilla CSS (Modern Aesthetics)
+- **AI SDK**: @anthropic-ai/sdk, @google/generative-ai
+- **Tools**: Zod, Zod-to-JSON-Schema
 
-```env
+## 🔧 Toolbar (Agent Tools)
+
+Agents perform complex engineering tasks using a combination of the following tools:
+- `list_dir`: Check directory structure
+- `read_file` / `write_file`: Read and write file contents
+- `edit_file`: Modify specific parts of the file (including linter-based correction)
+- `run_command`: Execute terminal command
+- `search_code`: Search within the codebase
+- `glob`: Pattern-based file exploration
+
+## 🏁 Get started
+
+### 1. Setting environment variables
+Please set the following API keys in the `.env.local` file (or system host environment).
+
+```bash
 ANTHROPIC_API_KEY=your_anthropic_key
 GEMINI_API_KEY=your_gemini_key
 ```
 
-Then run:
-
+### 2. Package installation
 ```bash
 npm install
-npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000).
+### 3. Run the development server
+```bash
+npm run dev
+```
+Afterwards, access `http://localhost:3000` and check the dashboard.
 
+## 📁 Project Structure
 
-### Technology and project structure
-
-The frontend and backend use Next.js App Router, React, and TypeScript, with vanilla CSS. The AI SDKs are `@anthropic-ai/sdk` and `@google/generative-ai`; tool schemas use Zod and Zod-to-JSON-Schema.
-
-The available tools are `list_dir`, `read_file`, `write_file`, `edit_file` (including linter-based correction), `run_command`, `search_code`, and `glob`. The `app/` directory contains dashboard pages and layouts; `src/agent/` contains the agent loop and Claude, Gemini, and mock wrappers; `src/executor/` handles tool execution and schema conversion; `src/tools/` implements individual tools; and `lib/` contains the server-side agent runner.
+- `app/`: Next.js page and layout (Dashboard UI)
+- `src/agent/`: Agent loop and model-specific wrapper (Claude, Gemini, Mock)
+- `src/executor/`: Tool execution and schema conversion (ToolExecutor)
+- `src/tools/`: Individual tool implementation
+- `lib/`: server-side agent runner
 
 ## 한국어
 
