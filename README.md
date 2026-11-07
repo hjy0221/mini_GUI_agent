@@ -6,7 +6,7 @@
 
 モダンで美しくデザインされたダッシュボードを使用して、**Claude**と**Google Gemini**ベースのAIエージェントループを管理および監視できるプロジェクトです。
 
-![Dashboard Preview](./public/dashboard.png)
+![Dashboard Preview](./public/dashboard-ja.png)
 
 ## 🚀主な特長
 
@@ -66,7 +66,7 @@ npm run dev
 
 This is a project that allows you to manage and monitor AI agent loops based on **Claude** and **Google Gemini** through a modern and elegantly designed dashboard.
 
-![Dashboard Preview](./public/dashboard.png)
+![Dashboard Preview](./public/dashboard-en.png)
 
 ## 🚀 Key Features
 
