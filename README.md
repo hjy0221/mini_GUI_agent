@@ -4,6 +4,8 @@
 
 ## 日本語
 
+[日本語](https://github.com/hjy0221/mini_GUI_agent#%E6%97%A5%E6%9C%AC%E8%AA%9E) · [English](https://github.com/hjy0221/mini_GUI_agent#english) · [한국어](https://github.com/hjy0221/mini_GUI_agent#%ED%95%9C%EA%B5%AD%EC%96%B4)
+
 モダンで美しくデザインされたダッシュボードを使用して、**Claude**と**Google Gemini**ベースのAIエージェントループを管理および監視できるプロジェクトです。
 
 ![Dashboard Preview](./public/dashboard-ja.png)
@@ -64,6 +66,8 @@ npm run dev
 
 ## English
 
+[日本語](https://github.com/hjy0221/mini_GUI_agent#%E6%97%A5%E6%9C%AC%E8%AA%9E) · [English](https://github.com/hjy0221/mini_GUI_agent#english) · [한국어](https://github.com/hjy0221/mini_GUI_agent#%ED%95%9C%EA%B5%AD%EC%96%B4)
+
 This is a project that allows you to manage and monitor AI agent loops based on **Claude** and **Google Gemini** through a modern and elegantly designed dashboard.
 
 ![Dashboard Preview](./public/dashboard-en.png)
@@ -123,6 +127,8 @@ Afterwards, access `http://localhost:3000` and check the dashboard.
 - `lib/`: server-side agent runner
 
 ## 한국어
+
+[日本語](https://github.com/hjy0221/mini_GUI_agent#%E6%97%A5%E6%9C%AC%E8%AA%9E) · [English](https://github.com/hjy0221/mini_GUI_agent#english) · [한국어](https://github.com/hjy0221/mini_GUI_agent#%ED%95%9C%EA%B5%AD%EC%96%B4)
 
 현대적이고 미려한 디자인의 대시보드를 통해 **Claude**와 **Google Gemini**기반의 AI 에이전트 루프를 관리하고 모니터링할 수 있는 프로젝트입니다.
 
